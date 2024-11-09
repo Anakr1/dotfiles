@@ -70,12 +70,21 @@ ZSH_THEME="Soliah"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
+# Функция для запуска nvim с правами суперпользователя
+#sv() {
+#    sudo -E nvim "$@"
+#}
+
+# Опционально: если хотите настроить автоподстановку для функции sv
+#compdef sv="nvim"
+
+
+# User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -104,8 +113,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
+alias sv='sudo -E nvim'
 alias l="lsd -l"
 alias ll="lsd -al"
 alias moo="echo "Moo!!!!""
 alias c="clear"
 alias f="fg %"
+
+

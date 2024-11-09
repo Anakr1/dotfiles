@@ -1,8 +1,10 @@
 
 "Нумерция строк
 :set number
-"Включение мыши
-" :set mouse=a
+"Включение мыши и отключение
+:set mouse=
+":set mouse=a
+
 "Текст и табы
 :set autoindent
 :set tabstop=4

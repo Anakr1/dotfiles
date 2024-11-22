@@ -95,6 +95,8 @@ map <F8> <ESC>:set cursorcolumn!<CR>
 "Нумерция строк
 nnoremap <F7> :set number!<CR>
 
+"Выполнение script.sh
+nnoremap <F3> :!bash %
 
 " Настройки темы airline
 let g:airline#extensions#tabline#enabled = 1

@@ -2,9 +2,10 @@
 
 
 sudo apt install zsh lsd neovim mc
-mv dotfiles .dotfiles
+mv dotfiles ~/.dotfiles
 rm ~/.zshrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+rm ~/.config
 ln -s ~/.dotfiles/.config ~/.config
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

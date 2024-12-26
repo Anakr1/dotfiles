@@ -2,6 +2,7 @@
 
 
 sudo apt install zsh lsd neovim mc
+mkdir oldfiles
 cp -r ~/.dotfiles oldfiles/
 rm -rf ~/.dotfiles
 cp .dotfiles ~/.dotfiles

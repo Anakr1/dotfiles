@@ -122,5 +122,5 @@ alias f="fg %"
 alias sudo="sudo -E"
 alias sl="lsd -lr"
 alias sla="lsd -alr"
-
+alias bat="batcat"
 

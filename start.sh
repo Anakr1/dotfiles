@@ -9,9 +9,9 @@ cp -r ~/.config oldfiles/
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp -r ~/.zshrc oldfiles/
-sudo rm -rf ~/.zshrc
+rm -rf ~/.zshrc
 ln -s .dotfiles/.zshrc ../.zshrc
-sudo rm -rf ~/.config
+rm -rf ~/.config
 ln -s .dotfiles/.config ../.config
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

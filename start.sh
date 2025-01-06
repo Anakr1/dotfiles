@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-sudo apt install zsh lsd neovim mc bat ripgrep
+sudo apt install zsh neovim mc bat ripgrep
 mkdir oldfiles
 cp -r ~/.dotfiles oldfiles/
 sudo rm -rf ~/.dotfiles
@@ -18,3 +18,5 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "Open nvim and text :PlugInstall'"   # установка плагинов
 echo "Finish"
+
+#sudo apt install lsd

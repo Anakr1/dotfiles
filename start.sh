@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install zsh neovim mc bat ripgrep
+sudo apt install zsh mc bat ripgrep
 mkdir oldfiles
 cp -r ~/.dotfiles oldfiles/
 sudo rm -rf ~/.dotfiles

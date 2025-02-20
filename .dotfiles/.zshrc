@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
-alias sv='sudo -E nvim'
+alias sv='sudo -E /opt/nvim//nvim'
 alias l="lsd -l"
 alias ll="lsd -al"
 alias moo="echo "Moo!!!!""

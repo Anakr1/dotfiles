@@ -123,4 +123,5 @@ alias sudo="sudo -E"
 alias sl="lsd -lr"
 alias sla="lsd -alr"
 alias bat="batcat"
-
+alias open=explorer.exe
+alias copy="win32yank.exe -i

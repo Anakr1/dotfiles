@@ -1,6 +1,5 @@
-cp -r ~/.zshrc oldfiles/
-rm -rf ~/.zshrc
-ln -s .dotfiles/.zshrc ../.zshrc
+mv ~/.zshrc oldfiles/
+ln -s .dotfiles/.zshrc ~/.zshrc
 
 echo "Open nvim and text :PlugInstall'"   # установка плагинов
 echo "Finish"

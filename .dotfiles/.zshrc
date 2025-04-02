@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
-alias sv='sudo -E /opt/nvim//nvim'
+alias sv="sudo -E /usr/bin/nvim"
 alias l="lsd -l"
 alias ll="lsd -al"
 alias moo="echo "Moo!!!!""
@@ -123,5 +123,5 @@ alias sudo="sudo -E"
 alias sl="lsd -lr"
 alias sla="lsd -alr"
 alias bat="batcat"
-alias open=explorer.exe
-alias copy="win32yank.exe -i
+alias open="explorer.exe"
+alias copy="win32yank.exe -i"

@@ -125,5 +125,5 @@ alias sla="lsd -alr"
 alias bat="batcat"
 alias open="explorer.exe"
 alias openf='explorer.exe "$(wslpath -w "$PWD")"'
-alias codef='code "$(wslpath -w "$PWD")"'
+alias codef='code "$PWD"'
 alias copy="win32yank.exe -i"

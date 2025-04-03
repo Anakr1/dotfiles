@@ -3,6 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -112,8 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias v="nvim"
-alias sv="sudo -E /usr/bin/nvim"
+alias v="/opt/nvim-linux-x86_64/bin/nvim"
+alias sv="sudo -E /opt/nvim-linux-x86_64/bin/nvim"
 alias l="lsd -l"
 alias ll="lsd -al"
 alias moo="echo "Moo!!!!""

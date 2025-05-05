@@ -48,7 +48,6 @@ else
   vim.g.airline_theme = 'deus'
   -- Синтаксис, мышка, смена режимом, голубой курсор
   vim.cmd('syntax enable')  -- Включает подсветку синтаксиса 
-  vim.opt.mouse = 'a'  -- Разрешить использование мыши
   vim.cmd [[
     set keymap=russian-jcukenwin
     set iminsert=0

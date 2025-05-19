@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install zsh mc bat ripgrep curl wget bash-completion ncdu lsd ripgrep
+sudo apt install zsh mc bat ripgrep curl wget bash-completion ncdu lsd ripgrep zoxide fzf
 mv ~/.dotfiles oldfiles/
 cp -r .dotfiles ~/.dotfiles
 mv -r ~/.config oldfiles/

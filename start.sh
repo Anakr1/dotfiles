@@ -3,7 +3,7 @@
 sudo apt install zsh mc bat ripgrep curl wget bash-completion ncdu lsd ripgrep zoxide fzf
 mv ~/.dotfiles oldfiles/
 cp -r .dotfiles ~/.dotfiles
-mv -r ~/.config oldfiles/
+mv ~/.config oldfiles/
 ln -s ~/.dotfiles/.config ~/.config
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
 mkdir ~/.soft

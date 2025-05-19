@@ -4,6 +4,7 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -121,4 +122,4 @@ alias open="explorer.exe"
 alias openf='explorer.exe "$(wslpath -w "$PWD")"'
 alias codef='code "$PWD"'
 alias copy="win32yank.exe -i"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"

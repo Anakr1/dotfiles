@@ -106,8 +106,8 @@ source $ZSH/oh-my-zsh.sh
 #alias v="~/.soft/nvim-linux64/bin/nvim"    
 #alias sv="sudo -E ~/.soft/nvim-linux64/bin/nvim" 
 
-#alias v="nvim"
-#alias sv="sudo -E nvim" 
+alias v="nvim"
+alias sv="sudo -E nvim" 
 alias l="lsd -l"
 alias ll="lsd -al"
 alias c="clear"

@@ -113,8 +113,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias v="~/.soft/nvim-linux64/bin/nvim"    
-alias sv="sudo -E ~/.soft/nvim-linux64/bin/nvim" 
+#alias v="~/.soft/nvim-linux64/bin/nvim"    
+#alias sv="sudo -E ~/.soft/nvim-linux64/bin/nvim" 
+
+#alias v="nvim"
+#alias sv="sudo -E nvim" 
 alias l="lsd -l"
 alias ll="lsd -al"
 alias c="clear"
@@ -127,3 +130,4 @@ alias open="explorer.exe"
 alias openf='explorer.exe "$(wslpath -w "$PWD")"'
 alias codef='code "$PWD"'
 alias copy="win32yank.exe -i"
+eval "$(zoxide init zsh)"

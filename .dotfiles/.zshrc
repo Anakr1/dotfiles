@@ -123,3 +123,4 @@ alias openf='explorer.exe "$(wslpath -w "$PWD")"'
 alias codef='code "$PWD"'
 alias copy="win32yank.exe -i"
 eval "$(zoxide init zsh --cmd cd)"
+alias ipa="ip -br a"

@@ -18,6 +18,10 @@ ZSH_THEME="Soliah"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Зашоузка пользовательских функций 
+fpath=(~/.config/zsh_functions $fpath)    
+autoload -Uz ggc ggp
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

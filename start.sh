@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install zsh mc bat ripgrep curl wget bash-completion ncdu lsd fzf
+sudo apt install zsh mc ripgrep curl wget bash-completion ncdu lsd fzf
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 mv ~/.dotfiles oldfiles/
 cp -r .dotfiles ~/.dotfiles

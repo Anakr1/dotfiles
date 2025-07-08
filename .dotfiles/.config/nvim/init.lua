@@ -25,11 +25,13 @@ if vim.fn.has('win32') == 1 then
 else
   -- Linux/Ubuntu
   -- Сохранение и выход
-  vim.keymap.set('i', '<F2>', '<Esc>:w<CR>', { silent = true })
-  vim.keymap.set('n', '<F2>', ':w<CR>', { silent = true })
-  vim.keymap.set('i', '<F10>', '<Esc>:q<CR>', { silent = true })
-  vim.keymap.set('n', '<F10>', ':q<CR>', { silent = true })
-
+  vim.keymap.set('i', '<F2>', '<Esc>:w<CR>', { desc = 'Save file', silent = true })
+  vim.keymap.set('n', '<F2>', ':w<CR>', { desc = 'Save file', silent = true })
+  vim.keymap.set('i', '<F10>', '<Esc>:q<CR>', { desc = 'Quit without saving', silent = true })
+  vim.keymap.set('n', '<F10>', ':q<CR>', { desc = 'Quit without saving', silent = true })
+  vim.keymap.set('i', '<F12>', '<Esc>:q!<CR>', { desc = 'Force quit without saving', silent = true })
+  vim.keymap.set('n', '<F12>', ':q!<CR>', { desc = 'Force quit without saving', silent = true })
+  
   -- Для выделения и курсора
   vim.keymap.set('n', '<F8>', ':set cursorcolumn!<CR>', { silent = true })
   vim.keymap.set('n', '<F7>', ':set number!<CR>', { silent = true })

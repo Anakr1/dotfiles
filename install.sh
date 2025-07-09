@@ -1,5 +1,5 @@
 #!/bin/bash
-#sudo apt install curl wget bash-completion zsh ncdu lsd tree 
+#sudo apt install curl wget bash-completion zsh ncdu lsd tree ripgrep 
 set -v
 
 # подготовка папок 

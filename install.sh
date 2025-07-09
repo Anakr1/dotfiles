@@ -1,5 +1,6 @@
 #!/bin/bash
 #sudo apt install curl wget bash-completion zsh ncdu lsd tree 
+set -v
 
 # подготовка папок 
 mkdir -p ~/.local/bin/

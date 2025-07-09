@@ -1,0 +1,21 @@
+ggca() {
+  if [ $# -eq 0 ]; then
+    echo "Ошибка: Требуется сообщение коммита"
+    return 1
+  fi
+
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Ошибка: Вы не в Git-репозитории"
+    return 1
+  fi
+
+  local branch_name
+  branch_name=$(git branch --show-current 2>/dev/null)
+
+  if [ -z "$branch_name" ]; then
+    echo "Ошибка: Не удалось определить ветку"
+    return 1
+  fi
+
+  git commit --amend -m "${branch_name}: $*"
+}

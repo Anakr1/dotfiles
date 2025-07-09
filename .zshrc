@@ -20,7 +20,7 @@ ZSH_THEME="Soliah"
 
 # Зашоузка пользовательских функций 
 fpath=(~/.config/zsh_functions $fpath)    
-autoload -Uz ggc ggp
+autoload -Uz ggc ggca ggp
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

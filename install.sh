@@ -31,6 +31,9 @@ ln -s "${HOME}/.dotfiles/.config/nvim" "${HOME}/.config/nvim"
 ln -s "${HOME}/.dotfiles/.config/zsh_functions" "${HOME}/.config/zsh_functions"
 ln -s "${HOME}/.dotfiles/files/oh-my-zsh-offline" "${HOME}/.oh-my-zsh"
 
+# надо понять в чём дело
+cp -r ${HOME}/.dotfiles/files/oh-my-zsh/* ${HOME}/.oh-my-zsh
+
 # ===== 4. Установка ZSH как оболочки по умолчанию =====
 if command -v zsh >/dev/null 2>&1; then
     chsh -s "$(command -v zsh)"

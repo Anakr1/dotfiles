@@ -5,6 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$HOME/.local/bin:$PATH"
+export KUBECONFIG=$(ls ~/.kube/{config,*config.yaml} | tr '\n' ':');
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -93,8 +94,14 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='nvim'
 # fi
 
+#ssh_block
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
+
+#k8s
+autoload -Uz compinit && compinit
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -127,4 +134,4 @@ alias codef='code "$PWD"'
 alias copy="win32yank.exe -i"
 eval "$(zoxide init zsh --cmd cd)"
 alias ipa="ip -br a"
-alias kubectl="minikube kubectl --"
+#alias kubectl="minikube kubectl --"

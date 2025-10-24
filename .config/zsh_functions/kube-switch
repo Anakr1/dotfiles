@@ -1,33 +1,106 @@
+# =============================================================================    
+# KUBERNETES SWITCHING FUNCTIONS    
+# =============================================================================    
+    
 function kube-switch() {    
     local config_dir=~/.kube    
     local configs=($config_dir/*.yaml $config_dir/config)    
     local selected    
-        
+    
     if [[ ${#configs[@]} -eq 0 ]]; then    
         echo "No kubeconfig files found in $config_dir"    
         return 1    
     fi    
-        
-    echo "Available kubeconfigs:"    
-    for i in {1..${#configs[@]}}; do    
-        echo "  $i) ${configs[i]##*/}"    
-    done    
-        
-    echo -n "Select config (1-${#configs[@]}): "    
-    read choice    
-        
-    if [[ $choice -ge 1 && $choice -le ${#configs[@]} ]]; then    
-        selected=$configs[choice]    
-        export KUBECONFIG=$selected    
-        echo "Switched to: ${selected##*/}"    
-        kubectl config view --minify --flatten | grep -E "^\s*(user|cluster|namespace):"    
+    
+    # Если передан аргумент - используем его    
+    if [[ $# -gt 0 ]]; then    
+        local choice=$1    
+        if [[ $choice -ge 1 && $choice -le ${#configs[@]} ]]; then    
+            selected=$configs[choice]    
+            export KUBECONFIG=$selected    
+            echo "Switched to: ${selected##*/}"    
+            kubectl config view --minify --flatten 2>/dev/null | grep -E "^\s*(user|cluster|namespace):" | head -5    
+        else    
+            echo "Invalid selection: $choice. Available: 1-${#configs[@]}"    
+            return 1    
+        fi    
     else    
-        echo "Invalid selection"    
+        # Интерактивный режим    
+        echo "Available kubeconfigs:"    
+        for i in {1..${#configs[@]}}; do    
+            echo "  $i) ${configs[i]##*/}"    
+        done    
+    
+        echo -n "Select config (1-${#configs[@]}): "    
+        read choice    
+    
+        if [[ $choice -ge 1 && $choice -le ${#configs[@]} ]]; then    
+            selected=$configs[choice]    
+            export KUBECONFIG=$selected    
+            echo "Switched to: ${selected##*/}"    
+            kubectl config view --minify --flatten 2>/dev/null | grep -E "^\s*(user|cluster|namespace):" | head -5    
+        else    
+            echo "Invalid selection"    
+            return 1    
+        fi    
     fi    
 }    
     
+function kube-use() {    
+    local config_dir=~/.kube    
+    local target=$1    
     
-function kube-current() {    
-    echo "Current context: $(kubectl config current-context 2>/dev/null || echo 'None')"    
-    echo "KUBECONFIG: $KUBECONFIG"    
-}
+    if [[ -z "$target" ]]; then    
+        echo "Usage: kube-use <config-number|config-name>"    
+        echo "Available configs:"    
+        ls -la ~/.kube/ | grep -E "(config|\.yaml|\.yml)$" | awk '{print $9}'    
+        return 1    
+    fi    
+    
+    # Если число - выбираем по номеру    
+    if [[ "$target" =~ ^[0-9]+$ ]]; then    
+        local configs=($config_dir/*.yaml $config_dir/config)    
+        if [[ $target -ge 1 && $target -le ${#configs[@]} ]]; then    
+            export KUBECONFIG=${configs[target]}    
+            echo "Switched to: ${configs[target]##*/}"    
+        else    
+            echo "Invalid config number: $target. Available: 1-${#configs[@]}"    
+            return 1    
+        fi    
+    else    
+        # Ищем по имени    
+        local config_path="$config_dir/$target"    
+        if [[ ! "$config_path" =~ \.(yaml|yml)$ ]] && [[ "$target" != "config" ]]; then    
+            config_path="$config_dir/$target.yaml"    
+        fi    
+    
+        if [[ -f "$config_path" ]]; then    
+            export KUBECONFIG=$config_path    
+            echo "Switched to: ${config_path##*/}"    
+        else    
+            echo "Config not found: $target"    
+            echo "Available configs:"    
+            ls -la ~/.kube/ | grep -E "(config|\.yaml|\.yml)$" | awk '{print $9}'    
+            return 1    
+        fi    
+    fi    
+    
+    # Показываем текущий контекст    
+    kubectl config view --minify --flatten 2>/dev/null | grep -E "^\s*(user|cluster|namespace):" | head -5    
+}    
+    
+function kube-list() {    
+    echo "Available kubeconfigs:"    
+    local i=1    
+    for config in ~/.kube/*.yaml ~/.kube/config; do    
+        if [[ -f "$config" ]]; then    
+            local current=""    
+            if [[ "$KUBECONFIG" == *"${config##*/}"* ]]; then    
+                current=" (current)"    
+            fi    
+            echo "  $i) ${config##*/}$current"    
+            ((i++))    
+        fi    
+    done    
+}    
+   

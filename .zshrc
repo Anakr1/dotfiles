@@ -86,5 +86,30 @@ alias ipa="ip -br a"
 alias gs="git status"    
 alias gga="git add"    
     
-alias kc="kube-current"    
-alias ks="kube-switch" 
+alias ks="kube-switch"    
+alias kl="kube-list"    
+alias ku="kube-use"    
+    
+# =============================================================================    
+# CUSTOM PROMPT WITH KUBECONFIG (RIGHT SIDE)    
+# =============================================================================    
+    
+# Функция для получения имени текущего kubeconfig    
+function get_kubeconfig_name() {    
+    if [[ -n "$KUBECONFIG" ]]; then    
+        # Если KUBECONFIG содержит несколько путей, берем первый    
+        local first_config=${KUBECONFIG%%:*}    
+        local config_name=$(basename "$first_config")    
+        # Убираем расширения .yaml и .yml    
+        config_name="${config_name%.yaml}"    
+        config_name="${config_name%.yml}"    
+        # Убираем 'config' если это дефолтный конфиг    
+        if [[ "$config_name" == "config" ]]; then    
+            config_name=""    
+        fi    
+        echo "$config_name"    
+    fi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+# Kubeconfig справа фиолетовым цветом                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+RPROMPT='%F{99}$(get_kubeconfig_name)%f' 

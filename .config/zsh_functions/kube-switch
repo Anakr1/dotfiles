@@ -1,0 +1,33 @@
+function kube-switch() {    
+    local config_dir=~/.kube    
+    local configs=($config_dir/*.yaml $config_dir/config)    
+    local selected    
+        
+    if [[ ${#configs[@]} -eq 0 ]]; then    
+        echo "No kubeconfig files found in $config_dir"    
+        return 1    
+    fi    
+        
+    echo "Available kubeconfigs:"    
+    for i in {1..${#configs[@]}}; do    
+        echo "  $i) ${configs[i]##*/}"    
+    done    
+        
+    echo -n "Select config (1-${#configs[@]}): "    
+    read choice    
+        
+    if [[ $choice -ge 1 && $choice -le ${#configs[@]} ]]; then    
+        selected=$configs[choice]    
+        export KUBECONFIG=$selected    
+        echo "Switched to: ${selected##*/}"    
+        kubectl config view --minify --flatten | grep -E "^\s*(user|cluster|namespace):"    
+    else    
+        echo "Invalid selection"    
+    fi    
+}    
+    
+    
+function kube-current() {    
+    echo "Current context: $(kubectl config current-context 2>/dev/null || echo 'None')"    
+    echo "KUBECONFIG: $KUBECONFIG"    
+}

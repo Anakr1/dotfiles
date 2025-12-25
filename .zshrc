@@ -39,11 +39,12 @@ if [[ ${#kube_config_files[@]} -gt 0 ]]; then
 fi    
     
 # kubectl autocomplete    
-if command -v kubectl >/dev/null 2>&1; then    
-    source <(kubectl completion zsh)    
-    compdef __start_kubectl kubectl    
-fi    
-    
+#if command -v kubectl >/dev/null 2>&1; then    
+#    source <(kubectl completion zsh)    
+#    compdef __start_kubectl kubectl    
+#fi    
+source <(kubectl completion zsh)
+
 # =============================================================================    
 # CUSTOM FUNCTIONS    
 # =============================================================================    

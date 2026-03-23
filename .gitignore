@@ -1,19 +1,19 @@
-        .config/Lens/
-        .config/Qlipper/
-        .config/dconf/
-        .config/evolution/
-        .config/featherpad/
-        .config/gtk-3.0/
-        .config/helm/
-        .config/htop/
-        .config/ibus/
-        .config/libreoffice/
-        .config/lxqt-mimeapps.list
-        .config/lxqt/
-        .config/pcmanfm-qt/
-        .config/pulse/
-        .config/qterminal.org/
-        .config/remmina/
-        .config/user-dirs.dirs
-        .config/user-dirs.locale
-        .config/xfce4/
+.config/BraveSoftware    
+.config/libreoffice    
+.config/Lens    
+.config/dconf    
+.config/evolution    
+.config/featherpad    
+.config/gtk-*    
+.config/helm    
+.config/htop    
+.config/xfce4        
+.config/remmina
+.config/qtermina
+.config/pulse   
+.config/pcman*    
+.config/lxqt 
+.config/ibus   
+.config/featherpad
+.config/evolution
+.config/Qlipper

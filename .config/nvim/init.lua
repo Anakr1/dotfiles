@@ -2,14 +2,26 @@
 vim.g.mapleader = ' '
 
 -- Основные настройки редактора
+vim.opt.list = false       -- Не показывать скрытые символы (например, пробелы в конце)
+vim.opt.wrap = false       -- Отключить перенос строк (иногда добавляет пробелы при выделении)
+vim.opt.showbreak = ""     -- Убрать отступы для перенесённых строк (если wrap включён)
+vim.opt.virtualedit = ""   -- Запретить курсору заходить за конец строки
 vim.opt.number = true  -- Нумерация строк
-vim.opt.clipboard = 'unnamedplus'  -- Синхронизация с буфером обмена
 vim.opt.ignorecase = true  -- Игнорировать регистр в поиске
 vim.opt.smartcase = true  -- Исключение: учитывать регистр, если есть заглавные буквы
 vim.opt.autoindent = true  -- Автоотступы
 vim.opt.tabstop = 2  -- Длина табуляции
 vim.opt.shiftwidth = 2  -- Размер отступов
 vim.opt.expandtab = true  -- Использовать пробелы вместо табуляции
+
+-- Умная настройка clipboard: только если доступен
+if vim.fn.has('clipboard') == 1 then
+  vim.opt.clipboard = 'unnamedplus'
+else
+  -- Для Termius и других терминалов без clipboard
+  vim.opt.clipboard = ''
+end
+
 
 -- Кроссплатформенные настройки
 if vim.fn.has('win32') == 1 then
@@ -78,6 +90,7 @@ else
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
     Plug 'terryma/vim-multiple-cursors'
+    Plug 'ojroques/vim-oscyank'
     call plug#end()
   ]]
 end

@@ -1,0 +1,44 @@
+{
+  "main-view": {
+    "selectedId": "cluster-component:/cluster/6753b4191aa1265b17bfaadaa6578bc7",
+    "tabs": [
+      {
+        "title": "Welcome",
+        "args": {
+          "route": "/extension/lensapp--lenscloud-lens-extension/welcomepage"
+        },
+        "id": "welcome-component:once",
+        "type": "welcome"
+      },
+      {
+        "title": "Catalog",
+        "id": "catalog-component:once",
+        "type": "catalog"
+      },
+      {
+        "title": "Catalog",
+        "args": {
+          "route": "/catalog/entity.k8slens.dev/General"
+        },
+        "id": "route-component:/catalog/entity.k8slens.dev/General",
+        "type": "route-component"
+      },
+      {
+        "title": "Catalog",
+        "args": {
+          "route": "/catalog/browse"
+        },
+        "id": "route-component:/catalog/browse",
+        "type": "route-component"
+      },
+      {
+        "title": "Cluster View",
+        "args": {
+          "route": "/cluster/6753b4191aa1265b17bfaadaa6578bc7"
+        },
+        "id": "cluster-component:/cluster/6753b4191aa1265b17bfaadaa6578bc7",
+        "type": "cluster"
+      }
+    ]
+  }
+}

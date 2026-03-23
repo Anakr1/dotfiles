@@ -1,0 +1,145 @@
+{
+  "main-view": {
+    "selectedId": "route-component:/persistent-volume-claims",
+    "tabs": [
+      {
+        "title": "Welcome",
+        "args": {
+          "route": "/extension/lensapp--lenscloud-lens-extension/welcomepage"
+        },
+        "id": "welcome-component:once",
+        "type": "welcome"
+      },
+      {
+        "title": "Nodes",
+        "args": {
+          "route": "/nodes"
+        },
+        "id": "route-component:/nodes",
+        "type": "route-component"
+      },
+      {
+        "title": "Pods",
+        "args": {
+          "route": "/pods"
+        },
+        "id": "route-component:/pods",
+        "type": "route-component"
+      },
+      {
+        "title": "Workloads",
+        "args": {
+          "route": "/workloads"
+        },
+        "id": "route-component:/workloads",
+        "type": "route-component"
+      },
+      {
+        "title": "Deployments",
+        "args": {
+          "route": "/deployments"
+        },
+        "id": "route-component:/deployments",
+        "type": "route-component"
+      },
+      {
+        "title": "Daemonsets",
+        "args": {
+          "route": "/daemonsets"
+        },
+        "id": "route-component:/daemonsets",
+        "type": "route-component"
+      },
+      {
+        "title": "Statefulsets",
+        "args": {
+          "route": "/statefulsets"
+        },
+        "id": "route-component:/statefulsets",
+        "type": "route-component"
+      },
+      {
+        "title": "Replicasets",
+        "args": {
+          "route": "/replicasets"
+        },
+        "id": "route-component:/replicasets",
+        "type": "route-component"
+      },
+      {
+        "title": "Replication Controllers",
+        "args": {
+          "route": "/replication-controllers"
+        },
+        "id": "route-component:/replication-controllers",
+        "type": "route-component"
+      },
+      {
+        "title": "Jobs",
+        "args": {
+          "route": "/jobs"
+        },
+        "id": "route-component:/jobs",
+        "type": "route-component"
+      },
+      {
+        "title": "Cronjobs",
+        "args": {
+          "route": "/cronjobs"
+        },
+        "id": "route-component:/cronjobs",
+        "type": "route-component"
+      },
+      {
+        "title": "Persistent Volume Claims",
+        "args": {
+          "route": "/persistent-volume-claims"
+        },
+        "id": "route-component:/persistent-volume-claims",
+        "type": "route-component"
+      },
+      {
+        "title": "Persistent Volumes",
+        "args": {
+          "route": "/persistent-volumes"
+        },
+        "id": "route-component:/persistent-volumes",
+        "type": "route-component"
+      },
+      {
+        "title": "Storage Classes",
+        "args": {
+          "route": "/storage-classes"
+        },
+        "id": "route-component:/storage-classes",
+        "type": "route-component"
+      }
+    ]
+  },
+  "sidebar": {
+    "width": 210,
+    "expanded": {
+      "lens-core-renderer:sidebar-item-workloads": true,
+      "lens-core-renderer:sidebar-item-storage": true
+    }
+  },
+  "selected_namespaces": [
+    "elk"
+  ],
+  "dock": {
+    "height": 304,
+    "isOpen": true,
+    "isFullSize": false,
+    "maxHeight": 716,
+    "minHeight": 100,
+    "selectedId": "terminal",
+    "tabs": [
+      {
+        "id": "terminal",
+        "type": "terminal",
+        "title": "Terminal",
+        "pinned": false
+      }
+    ]
+  }
+}

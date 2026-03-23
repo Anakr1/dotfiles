@@ -1,0 +1,9 @@
+{
+	"machineId": "3f5e0e09b73669344c244b01c39ac5d838c07e6df4a80459d02315ddd5d36383",
+	"hostname": "ds-admin-remote.corp-ipa.dengisrazy.ru",
+	"__internal__": {
+		"migrations": {
+			"version": "2.3.0"
+		}
+	}
+}

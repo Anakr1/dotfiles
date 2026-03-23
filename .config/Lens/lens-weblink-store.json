@@ -1,0 +1,39 @@
+{
+	"weblinks": [
+		{
+			"id": "lens-website-link",
+			"name": "Lens Website",
+			"url": "https://k8slens.dev"
+		},
+		{
+			"id": "lens-documentation-link",
+			"name": "Lens Documentation",
+			"url": "https://docs.k8slens.dev"
+		},
+		{
+			"id": "lens-forums-link",
+			"name": "Lens Forums",
+			"url": "https://forums.k8slens.dev"
+		},
+		{
+			"id": "lens-twitter-link",
+			"name": "Lens on Twitter",
+			"url": "https://twitter.com/k8slens"
+		},
+		{
+			"id": "lens-blog-link",
+			"name": "Lens Official Blog",
+			"url": "https://medium.com/k8slens"
+		},
+		{
+			"id": "kubernetes-documentation-link",
+			"name": "Kubernetes Documentation",
+			"url": "https://kubernetes.io/docs/home/"
+		}
+	],
+	"__internal__": {
+		"migrations": {
+			"version": "6.5.0"
+		}
+	}
+}

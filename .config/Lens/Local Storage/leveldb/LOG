@@ -1,5 +1,0 @@
-2025/07/15-09:31:36.081 36d001 Creating DB /home/argordienko/.config/Lens/Local Storage/leveldb since it was missing.
-2025/07/15-09:31:36.128 36d001 Reusing MANIFEST /home/argordienko/.config/Lens/Local Storage/leveldb/MANIFEST-000001
-2025/07/17-21:55:29.807 36d001 Level-0 table #5: started
-2025/07/17-21:55:29.811 36d001 Level-0 table #5: 8439 bytes OK
-2025/07/17-21:55:29.815 36d001 Delete type=0 #3

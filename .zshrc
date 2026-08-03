@@ -51,7 +51,12 @@ source <(kubectl completion zsh)
     
 # Загрузка пользовательских функций             
 fpath=(~/.config/zsh_functions $fpath)    
-autoload -Uz ggc ggca ggp gga kube-switch    
+# autoload -Uz ggc ggca ggp gga kube-switch
+for func in ggc ggca ggp gga kube-switch; do
+  if [[ -f ~/.dotfiles/.config/zsh_functions/$func ]]; then
+    source ~/.dotfiles/.config/zsh_functions/$func
+  fi
+done
     
 # =============================================================================    
 # SSH CONFIGURATION    
